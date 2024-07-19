@@ -16,6 +16,7 @@
 ### 1. Клонирование репозитория
 
 git clone git@github.com:lokotkovnv/what_weather_app.git
+
 cd what_weather_app
 ### 2. Создание и активация виртуального окружения
 Для Unix/Linux/MacOS:
