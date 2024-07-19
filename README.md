@@ -22,12 +22,14 @@ cd what_weather_app
 Для Unix/Linux/MacOS:
 
 python3 -m venv venv
+
 source venv/bin/activate
 
 Для Windows:
 
 python -m venv venv
-venv\Scripts\activate
+
+source venv\Scripts\activate
 ### 3. Установка зависимостей
 pip install -r requirements.txt
 ### 4. Миграции базы данных
@@ -40,4 +42,5 @@ python manage.py test
 
 ### Автор
 Локотков Никита
+
 https://github.com/lokotkovnv
