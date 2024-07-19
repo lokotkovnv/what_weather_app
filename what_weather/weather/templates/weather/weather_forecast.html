@@ -1,0 +1,22 @@
+{% extends "weather/base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2>Прогноз погоды: {{ city }}</h2>
+
+  <div class="row">
+    {% for day in forecast %}
+    <div class="col-md-3 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ day.date }}</h5>
+          <p class="card-text">{{ day.min_temp }}° / {{ day.max_temp }}°</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <a href="{% url 'weather:city_form' %}" class="btn btn-secondary mt-3">На главную</a>
+</div>
+{% endblock content %}

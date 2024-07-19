@@ -1,0 +1,25 @@
+{% extends "weather/base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">Введите название города</h2>
+    
+    {% if error_message %}
+        <div class="alert alert-danger">{{ error_message }}</div>
+    {% endif %}
+
+    {% if last_city %}
+        <div class="alert alert-info" role="alert">
+            Добро пожаловать обратно! Хотите снова увидеть прогноз погоды для <a href="{% url 'weather:city_form' %}?city={{ last_city }}">{{ last_city }}</a>?
+        </div>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-primary">Узнать погоду</button>
+    </form>
+</div>
+{% endblock content %}
